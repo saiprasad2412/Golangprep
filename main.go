@@ -3,8 +3,9 @@ package main
 import (
 	// "bufio"
 	"fmt"
+	// "sort"
 	// "os"
-	"time"
+	// "time"
 	// "strconv"
 	// "strings"
 )
@@ -56,12 +57,93 @@ func main() {
 	// }
 
 	// *** Handling time
-	fmt.Println("Time handling in GO")
-	presentTime := time.Now()
-	fmt.Println(presentTime)
-	fmt.Println("Formated presentTIme is",presentTime.Format("01-02-2006 15:04:05 Monday"))
+	// fmt.Println("Time handling in GO")
+	// presentTime := time.Now()
+	// fmt.Println(presentTime)
+	// fmt.Println("Formated presentTIme is",presentTime.Format("01-02-2006 15:04:05 Monday"))
 
-	createdDate:= time.Date(2020, time.August, 12,23,23,1,1,time.UTC)
-	fmt.Println(createdDate.Format("01-02-2006 Monday"))
+	// createdDate:= time.Date(2020, time.August, 12,23,23,1,1,time.UTC)
+	// fmt.Println(createdDate.Format("01-02-2006 Monday"))
 
+	// ***Pointers in GO
+	// fmt.Println("Pointers in GO")
+
+	// var ptr *int
+	// fmt.Println(ptr)
+
+	// myNum:=24;
+	// var ptr = &myNum;
+	// fmt.Println(*ptr);
+
+	// Array in GO --->we dont use to much of array in go language
+	// fmt.Println("Array in GO")
+
+	// var fruits[4]string
+	// fruits[0]="A"
+	// fruits[1]="B"
+	// fruits[2]="C"
+
+	// fmt.Println("Array -->", fruits)
+
+	// var vegList=[3]string{"P","B","M"}
+	// fmt.Println("Veglist & Length -->",vegList, len(vegList))
+
+	// slices in GO --> uses more in go
+	// fmt.Println("Slices in Go")
+	// var fruitList= []string{"A","B"}
+	// fruitList= append(fruitList, "Mango","Banana")
+	// fmt.Println("ffff-->",fruitList)
+
+	// highscores:= make([]int , 4)
+	// highscores[0]=1
+	// highscores[1]=1
+	// highscores[2]=1
+	// highscores[3]=1
+	// // highscores[4]=1 --->wrong out of range
+	// highscores=append(highscores, 2,3)
+
+	// fmt.Println(highscores)
+
+	// sort.Ints(highscores)
+	// fmt.Println(highscores)
+
+	// *** How to remove values from slice based on index
+	// var course= []string{"react","JS","C#","C++"}
+	// fmt.Println(course)
+	// var deleteINdex int =2;
+	// course=append(course[:deleteINdex],course[deleteINdex+1:]...)
+	// fmt.Println(course)
+
+	// *** Maps in go
+	// fmt.Println("maps in go")
+
+	// languages:=make(map[string]string)
+
+	// languages["JS"]="Javascript"
+	// languages["RB"]="Ruby"
+	// languages["PY"]="Python"
+
+	// fmt.Println(languages["JS"])
+	// delete(languages, "RB")
+
+	// fmt.Println(languages)
+
+	// for key,value:=range languages{
+	// 	fmt.Printf("for key %v -> value is %v \n",key, value)
+	// }
+
+	// *** Structs in go
+	fmt.Println("Structs in GO")
+
+	bot1 := User{"Bot1", "Bot1@g.com", true, 1}
+	fmt.Println(bot1)
+	fmt.Printf("Details of bot1 are : %+v",bot1)
+
+	
+}
+type User struct {
+	Name   string
+	Email  string
+	Status bool
+	Age    int
 }
