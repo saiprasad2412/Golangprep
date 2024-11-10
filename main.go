@@ -133,17 +133,49 @@ func main() {
 	// }
 
 	// *** Structs in go
-	fmt.Println("Structs in GO")
+	// fmt.Println("Structs in GO")
 
-	bot1 := User{"Bot1", "Bot1@g.com", true, 1}
-	fmt.Println(bot1)
-	fmt.Printf("Details of bot1 are : %+v",bot1)
+	// bot1 := User{"Bot1", "Bot1@g.com", true, 1}
+	// fmt.Println(bot1)
+	// fmt.Printf("Details of bot1 are : %+v",bot1)
 
-	
+	// 	result:=addfn(10,5)
+	// 	fmt.Println(result)
+
+	// 	proResult:=proaddfn(1,2,3,4,5,6,7)
+	// 	fmt.Println(proResult)
+
+	// }
+
+	// func addfn(val1 int , val2 int)int{
+	// 	return val1+val2
+	// }
+	// func proaddfn(values ...int)int{
+	// 	total:=0
+	// 	for _,val:=range values{
+	// 		total+=val
+	// 	}
+	// 	return total
+	// }
+	// bot1 := User{"bot1", "bot1@g.com", true, 1}
+	// bot1.GetUserInfo()
+
+	// *** Defer in go 
+	defer fmt.Println("four")
+	defer fmt.Println("three")
+	fmt.Println("one")
+	fmt.Println("Two")
+
 }
-type User struct {
-	Name   string
-	Email  string
-	Status bool
-	Age    int
-}
+
+// *** methods
+// func (u User) GetUserInfo() {
+// 	fmt.Println("user info", u.Name)
+// }
+
+// type User struct {
+// 	Name   string
+// 	Email  string
+// 	Status bool
+// 	Age    int
+// }
