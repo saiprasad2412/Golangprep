@@ -3,6 +3,11 @@ package main
 import (
 	// "bufio"
 	"fmt"
+	// "io"
+	// "net/http"
+	"net/http"
+	"net/url"
+	// "golang.org/x/tools/go/analysis/passes/defers"
 	// "sort"
 	// "os"
 	// "time"
@@ -160,11 +165,49 @@ func main() {
 	// bot1 := User{"bot1", "bot1@g.com", true, 1}
 	// bot1.GetUserInfo()
 
-	// *** Defer in go 
-	defer fmt.Println("four")
-	defer fmt.Println("three")
-	fmt.Println("one")
-	fmt.Println("Two")
+	// *** Defer in go
+	// defer fmt.Println("four")
+	// defer fmt.Println("three")
+	// fmt.Println("one")
+	// fmt.Println("Two")
+
+	// *** Handling web request in go
+	// fmt.Println("Handling web request in go")
+	// const url = "https://lco.dev"
+	// res, err := http.Get(url)
+	// if err != nil {
+	// 	panic(err)
+	// }
+	// defer res.Body.Close()
+	// databytes,err:=io.ReadAll(res.Body)
+	// if(err!=nil){
+	// 	panic(err)
+	// }
+	// content:=string(databytes)
+	// fmt.Println(content)
+
+	// **URLS in go
+	// fmt.Println("URLS in go")
+	// const URL string = "https://lco.dev:3000/learn"
+
+	// result, _ := url.Parse(URL)
+	// fmt.Println(result.Scheme)
+	// fmt.Println(result.Host)
+	// fmt.Println(result.Path)
+	// fmt.Println(result.RawQuery)
+	// // RawQuery --> params 
+	// fmt.Println(result.Port())
+
+	// *** create server in go 
+
+	fmt.Println("Get api ")
+	const myURl="http://localhost:8000/get"
+	res,err:=http.Get(myURl)
+	if(err!=nil){
+		panic(err)
+	}
+
+	defer res.Body.Close()
 
 }
 
