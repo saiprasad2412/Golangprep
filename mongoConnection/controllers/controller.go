@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"log"
+	model "main/models"
 
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
@@ -30,4 +31,14 @@ func init() {
 
 	fmt.Println("collection instance created")
 
+}
+
+//mongodb helpers
+func insertOneMovie(movie model.Netfix) {
+	inserted,err := collection.InsertOne(context.Background(),movie)
+
+	if err!=nil{
+		log.Fatal(err)
+	}
+	fmt.Println("movie inserted with id", inserted.InsertedID)
 }
