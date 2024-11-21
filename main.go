@@ -1,19 +1,17 @@
 package main
 
-import (
-	// "bufio"
-	"fmt"
-	// "io"
-	// "net/http"
-	"net/http"
-	"net/url"
-	// "golang.org/x/tools/go/analysis/passes/defers"
-	// "sort"
-	// "os"
-	// "time"
-	// "strconv"
-	// "strings"
-)
+// "bufio"
+// "fmt"
+// "io"
+// "net/http"
+// "net/http"
+// "net/url"
+// "golang.org/x/tools/go/analysis/passes/defers"
+// "sort"
+// "os"
+// "time"
+// "strconv"
+// "strings"
 
 // jswTOken:="123456789" --->not allowed
 var token string = "123456789"
@@ -195,20 +193,25 @@ func main() {
 	// fmt.Println(result.Host)
 	// fmt.Println(result.Path)
 	// fmt.Println(result.RawQuery)
-	// // RawQuery --> params 
+	// // RawQuery --> params
 	// fmt.Println(result.Port())
 
-	// *** create server in go 
+	// *** create server in go
 
-	fmt.Println("Get api ")
-	const myURl="http://localhost:8000/get"
-	res,err:=http.Get(myURl)
-	if(err!=nil){
-		panic(err)
-	}
+	// 	fmt.Println("Get api ")
+	// 	const myURl="http://localhost:8000/get"
+	// 	res,err:=http.Get(myURl)
+	// 	if(err!=nil){
+	// 		panic(err)
+	// 	}
 
-	defer res.Body.Close()
+	// 	defer res.Body.Close()
 
+	// }
+
+
+	// *** Mongodb connection 
+	 
 }
 
 // *** methods
@@ -222,3 +225,28 @@ func main() {
 // 	Status bool
 // 	Age    int
 // }
+// package main
+// import (    "encoding/json"    "fmt"    "net/http"    // "net/http"    // "strings")
+// // type course struct {//  Name     string `json:"coursename"`//  Price    int//  Platform string `json:"website"`//  Password string `json:"_"`//  Tags     []string `json:"tags,omitempty"`// }type course struct{    CourseId string `json:"courseid"`    CourseName string `json:"coursename"`    coursePrice int `json:"price`    Author *Author `json:"author"`}
+// type Author struct{    Fullname string `josn:"fullname"`    Website string `json:"website"`}
+// var fakeCourse []course
+//     // middleware , helper-file    func (c *course) Isempty()bool{        return c.CourseId =="" && c.CourseName==""
+//     }
+//     //controller    func serveHome(w http.ResponseWriter,r *http.Request){        w.Write([]byte("<h1>Working </h1>"))    }
+//     func getAllCourses(w http.ResponseWriter, r *http.Request){        fmt.Println("Fet All Courses")        w.Header().Set("Content-Type","applicatio/json")        json.NewEncoder(w).Encode(fakeCourse)    }func main() {    // fmt.Println("Post request")
+//     // requestBody:=strings.NewReader(`    // {    //  "jsonrpc": "2.0",    //  "method": "eth_blockNumber",    //  "params": [],    //  "id": 1    // }    // `)
+//     // res,err:=http.Post("http://localhost:8545", "application/json", requestBody)    // defer res.Body.Close()
+//     // fmt.Println("create json in go ")
+//     // EncodeJson()
+//     // *** api creation
+// }
+// // func EncodeJson() {
+// //  lcoCourse := []course{//         {//             Name:     "ReactJS Bootcamp",//             Price:    299,//             Platform: "udemy",//             Password: "abc123",//             Tags:     []string{"web-dev", "js"},//         },//         {//             Name:     "NodeJS Bootcamp",//             Price:    299,//             Platform: "udemy",//             Password: "abc123",//             Tags:     []string{"web-dev", "js"},//         },//     }
+// //  // finalJson,err:=json.Marshal(lcoCourse)//  finalJson,err:=json.MarshalIndent(lcoCourse, "", "\t")
+
+// //  if err!=nil{    //      panic(err)//  }
+// //  fmt.Printf(" json data is: %s\n", finalJson)
+// // }
+
+
+
