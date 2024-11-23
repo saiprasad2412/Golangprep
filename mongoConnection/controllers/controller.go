@@ -79,7 +79,7 @@ func deleteManyMovie(){
 }
 
 //get all movies from db
-func getAllMovies(){
+func getAllMovies() []primitive.M{
 	cursor,err:= collection.Find(context.Background(),bson.D{{}})
 	if err!=nil{
 		log.Fatal(err)
@@ -95,5 +95,5 @@ func getAllMovies(){
 	}
 
 	defer cursor.Close(context.Background())
-	// return movies
+	return movies
 }
