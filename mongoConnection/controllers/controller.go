@@ -2,9 +2,11 @@ package controller
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"log"
 	model "main/models"
+	"net/http"
 
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
@@ -96,4 +98,15 @@ func getAllMovies() []primitive.M{
 
 	defer cursor.Close(context.Background())
 	return movies
+}
+
+//actuall cotrollers till now was mongodb helpers
+func GetAllMoviesController(w http.ResponseWriter,r *http.Request){
+	w.Header().Set("Content-Type","application/x-www-form-urlencoded")
+
+	allMovies:=getAllMovies()
+
+
+	json.NewEncoder(w).Encode(allMovies)
+
 }
