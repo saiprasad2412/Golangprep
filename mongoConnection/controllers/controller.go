@@ -6,6 +6,8 @@ import (
 	"log"
 	model "main/models"
 
+	"go.mongodb.org/mongo-driver/bson"
+	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
@@ -41,4 +43,18 @@ func insertOneMovie(movie model.Netfix) {
 		log.Fatal(err)
 	}
 	fmt.Println("movie inserted with id", inserted.InsertedID)
+}
+
+//updateOne record
+func updateOneMovie(movieId string){
+	id,_:= primitive.ObjectIDFromHex(movieId)
+	filter:=bson.M{"_id":id}
+	update:=bson.M{"$set":bson.M{"watched":true}}
+
+	result,err:= collection.UpdateOne(context.Background(),filter,update)
+
+	if err!=nil{
+		log.Fatal(err)
+	}	
+	fmt.Println("updated successfully",result.ModifiedCount)
 }
